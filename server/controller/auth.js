@@ -4,10 +4,6 @@ import 'express-async-errors'
 import * as userRepo from '../data/auth.js'
 import {config} from '../config.js'
 
-/*
-const jwtSecretKey = 'F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z';
-const jwtExpiresInDays = '2d';
-*/
 export async function signup(req,res){
     const {username, password, phonenum} = req.body;
     const found = await userRepo.findByusername(username)

@@ -12,6 +12,7 @@ import authRouter from './router/authroute.js'
 import loginRouter from './router/loginroute.js'
 import { initSocket } from './controller/chat.js'
 import {config} from './config.js'
+import { db } from './db/database.js'
 
 const app = express();
 const sessionFileStore = FileStore(session);
@@ -42,5 +43,6 @@ app.use((error, req, res, next) => {
     res.sendStatus(500);
 });
 
+db.getConnection()
 const server = app.listen(config.host.port);
 initSocket(server);
