@@ -31,8 +31,6 @@ export function initSocket(server){
                         });
                     }
                 }
-
-                //io.emit('chat message',uid + ': '+msg);
         });
         socket.on('disconnect', () => {
             console.log('user disconnected');
