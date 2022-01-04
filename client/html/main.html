@@ -1,79 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <script src="/script.js"></script>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main</title>
+</head>
 
-  <body>
-    <div>
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/gitchat">GitChat</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          aria-controls="navbarNav"
-          data-bs-target="#navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/gitchat"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/gitchat/about">About</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <div class="grid-container">
+    <div class="header">
+      <a class="navbar-brand" href="/gitchat">GitChat</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/gitchat">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gitchat/about">About</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="chatpage">
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+        <script>
+          $(function () {
+            var socket = io();
+            $("form").submit(function () {
+              socket.emit("chat message", $("#m").val());
+              $("#m").val("");
+              return false;
+            });
+            socket.on("chat message", function (msg) {
+              $("#messages").append($("<li>").text(msg));
+            });
+          });
+        </script>
       </div>
     </div>
 
-    <div
-      class="chatpage"
-      style="
-        width: 50%;
-        height: 100%;
-        margin: 0;
-        border: 1px solid black;
-        float: left;
-      "
-    >
-      <ul id="messages"></ul>
-      <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-      </form>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <div class="right-page">FTP 혹은 Github 페이지 로드</div>
+  </div>
+</body>
 
-      <script>
-        $(function () {
-          var socket = io();
-          $("form").submit(function () {
-            socket.emit("chat message", $("#m").val());
-            $("#m").val("");
-            return false;
-          });
-          socket.on("chat message", function (msg) {
-            $("#messages").append($("<li>").text(msg));
-          });
-        });
-      </script>
-    </div>
-
-    <div style="width: 50%; height: 100%; margin: 0; float: right">
-      FTP 혹은 Github 페이지 로드
-    </div>
-  </body>
 </html>

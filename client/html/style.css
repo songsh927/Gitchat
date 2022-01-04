@@ -1,9 +1,15 @@
-header{
-    width: 100%;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 54px 1fr;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+.header {
+    grid-column-end: span 2;
 }
+
+.container {
+    min-height: 100vh;
+}
+
 
