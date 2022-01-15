@@ -41,7 +41,8 @@ body {
     flex: 1;
     border: 0;
     outline: none;
-    overflow: hidden;
+    overflow-y: scroll;
+    font-size: 14px;
 }
 
 @media (max-width: 768px){
