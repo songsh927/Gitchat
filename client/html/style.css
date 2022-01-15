@@ -1,15 +1,101 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 54px 1fr;
+html,
+body {
+    height: 100%;
+    overflow: hidden;
 }
 
-.header {
-    grid-column-end: span 2;
+body {
+    display: flex;
+    flex-direction: column;
+    /* font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300; */
 }
 
-.container {
-    min-height: 100vh;
+.main {
+    height: 100%;
+}
+.main .d-grid {
+    height: 100%;
+    grid-template-columns: minmax(360px,3fr) 5fr;
+    /* grid-template-columns: 3fr 5fr; */
+}
+.main .d-grid .chatpage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main .d-grid .chatpage .chats {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main .d-grid .chatpage .write {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+
+.main .d-grid .chatpage .write textarea{
+    resize: none;
+    display: flex;
+    flex: 1;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+}
+
+@media (max-width: 768px){
+    .main .d-grid {
+        grid-template: none;
+    }
+    .main .d-grid .gitpage{
+        display: none;
+    }
+}
+
+section {
+    background-color: brown;
+    height: 100%;
+}
+section .row{
+    height: 100%;
+}
+section .row .chatpage{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section .row .chatpage .chats{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section .row .chatpage .write{
+    background-color: white;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+section .row .chatpage .write textarea{
+    resize: none;
+    display: flex;
+    flex: 1;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+}
+section .row .right-page {
+    padding: 0;
+}
+@media (max-width: 768px) {
+    section .row .chatpage{
+        flex-grow: 1;
+        padding: 0px 12px;
+    }
+    section .right-page {
+        display: none;
+    }
 }
 
 
