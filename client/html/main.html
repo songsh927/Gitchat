@@ -22,20 +22,17 @@
 
 <body>
   
-  <header class="py-3 mb-3 border-bottom">
+  <header class="py-3 mb-3 border-bottom header">
     <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
       <div class="dropdown">
-        <a href="#" class="d-flex align-items-center col-lg-4 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="logo d-flex align-items-center col-lg-4 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
           <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
-          <img src="./img/logo.png" alt="Logo" class="me-2">
+          <!-- <img src="./img/logo.png" alt="Logo" class="me-2"> -->
+          <h3 class="text-dark logo">GitChat</h3>
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-          <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
+          <li><a class="dropdown-item" href="#">Home</a></li>
           <li><a class="dropdown-item" href="#">About</a></li>
-          <li><a class="dropdown-item" href="#">sample</a></li>
-          <li><a class="dropdown-item" href="#">sample</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Sample</a></li>
           <li><a class="dropdown-item" href="#">Sample</a></li>
         </ul>
       </div>
@@ -65,7 +62,9 @@
     <div class="d-grid gap-3">
       <div class="chatpage bg-light border rounded-3">
         <div class="chats">
-          <ul id="messages"></ul>
+          <ul id="messages">
+            
+          </ul>
         </div>
         <div class="write py-2 px-2 border-top">
           <textarea type="text" class="me-1 bg-light"id="m"></textarea>
