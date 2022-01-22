@@ -223,3 +223,21 @@ input[type=submit]:hover{
     color:rgb(164, 164, 164);
     margin:10px 0px;
 }
+
+/* about.html */
+.about_wrap {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 68px;
+}
+.about_wrap h1{
+    font-weight: 700;
+}
+.about_wrap p{
+    margin-bottom: 5px;
+}
+.update_wrap{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 32px;
+}
