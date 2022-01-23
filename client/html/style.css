@@ -40,23 +40,45 @@ body {
 }
 
 .main {
+    overflow: hidden;
     height: 100%;
 }
 .main .d-grid {
     height: 100%;
-    grid-template-columns: minmax(360px,3fr) 5fr;
+    grid-template-columns: minmax(390px,3fr) 5fr;
+    overflow: hidden;
     /* grid-template-columns: 3fr 5fr; */
 }
 .main .d-grid .chatpage {
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
 }
 .main .d-grid .chatpage .chats {
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: auto;
 }
+.main .d-grid .chatpage .chats .messages{
+    padding: 6px 0;
+}
+.main .d-grid .chatpage .chats .messages .message_wrap{
+    padding: 6px 0;
+}
+.main .d-grid .chatpage .chats .messages .message_wrap .message{
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 4px 16px;
+    margin: 0 12px;
+    border-radius: 7px;
+}
+.main .d-grid .chatpage .chats .messages .message span{
+    font-size: 14px;
+    color: #212529;
+}
+
 .main .d-grid .chatpage .write {
     display: flex;
     position: sticky;
