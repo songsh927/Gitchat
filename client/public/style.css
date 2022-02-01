@@ -1,0 +1,310 @@
+/* #727cf5 */
+*{
+    box-sizing:border-box;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: normal;
+    src: url('../font/NotoSansKR-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: bold;
+    src: url('../font/NotoSansKR-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: normal;
+    src: url('../font/Roboto-Light.ttf') format('truetype');
+    unicode-range: UU+0020-007E;
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    src: url('../font/Roboto-Medium.ttf') format('truetype');
+    unicode-range: UU+0020-007E;
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: bold;
+    src: url('../font/Roboto-Bold.ttf') format('truetype');
+    unicode-range: UU+0020-007E;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: normal;
+}
+
+.header .dropdown a.logo{
+    padding-left: 5px;
+}
+.header .dropdown a.logo h3{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-right: 5px;
+}
+.header .dropdown ul{
+    padding: 0;
+}
+.header .dropdown ul li a{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.header .dropdown ul li a:focus{
+    background-color: #727cf5;
+    color: white;
+}
+.header .dropdown ul li:nth-child(1) a{
+    padding-top: 6px;
+}
+.header .dropdown ul li:nth-child(3) a{
+    padding-bottom: 6px;
+}
+
+.main {
+    overflow: hidden;
+    height: 100%;
+}
+.main .d-grid {
+    height: 100%;
+    grid-template-columns: minmax(390px,3fr) 5fr;
+    overflow: hidden;
+    /* grid-template-columns: 3fr 5fr; */
+}
+.main .d-grid .chatpage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+.main .d-grid .chatpage .chats {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+.main .d-grid .chatpage .chats .messages{
+    padding: 6px 0;
+}
+.main .d-grid .chatpage .chats .messages .message_wrap{
+    padding: 6px 0;
+}
+.main .d-grid .chatpage .chats .messages .message_wrap .message{
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 4px 16px;
+    margin: 0 12px;
+    border-radius: 7px;
+}
+.main .d-grid .chatpage .chats .messages .message span{
+    font-size: 14px;
+    color: #212529;
+}
+
+.main .d-grid .chatpage .write {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+.main .d-grid .chatpage .write textarea{
+    resize: none;
+    display: flex;
+    flex: 1;
+    border: 0;
+    outline: none;
+    overflow: auto;
+    font-size: 14px;
+}
+.main .d-grid .chatpage .write button{
+    background-color: #727cf5;
+    border-color: #727cf5;
+}
+
+.main .d-grid .chatpage .write button:hover{
+    background-color: #6169d0;
+    border-color: #5b63c4;
+}
+
+@media (max-width: 768px){
+    .main .d-grid {
+        grid-template: none;
+    }
+    .main .d-grid .gitpage{
+        display: none;
+    }
+}
+
+section {
+    background-color: brown;
+    height: 100%;
+}
+section .row{
+    height: 100%;
+}
+section .row .chatpage{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section .row .chatpage .chats{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section .row .chatpage .write{
+    background-color: white;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+section .row .chatpage .write textarea{
+    resize: none;
+    display: flex;
+    flex: 1;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+}
+section .row .right-page {
+    padding: 0;
+}
+@media (max-width: 768px) {
+    section .row .chatpage{
+        flex-grow: 1;
+        padding: 0px 12px;
+    }
+    section .right-page {
+        display: none;
+    }
+}
+
+/* signup.html */
+.signup {
+    height: 100%;
+    background-color: #f8f9fa;
+    padding: 112px 0;
+    display: flex;
+}
+.signup .container {
+    margin: auto auto;
+}
+.signup .container .content{
+    justify-content: center;
+}
+.signup .container .content .card{
+    background-color: #ffffff;
+    width: 480px;
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    border-radius: 0.25rem;
+} 
+.signup .container .content .card .card-header{
+    padding: 38px 10px 36px 10px;
+    text-align: center;
+    background-color: #727cf5;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.signup .container .content .card .card-header a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+.signup .container .content .card .card-body{
+    padding: 36px;
+}
+.signup .container .content .card .card-body .text{
+    text-align: center;
+    color: #6c757d;
+}
+.signup .container .content .card .card-body .text h3{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.signup .container .content .card .card-body .text p{
+    margin: 0;
+    color: #98a6ad;
+    margin-bottom: 36px;
+}
+.signup .container .content .card .card-body form{
+    margin-bottom: 3px;
+}
+.signup .container .content .card .card-body form .input-box{
+    margin-bottom: 24px;
+}
+.signup .container .content .card .card-body form .input-box label{
+    font-weight: 500;
+    color: #6c757d;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 1.0rem;
+}
+.signup .container .content .card .card-body form .input-box input{
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    color: #6c757d;
+}
+.signup .container .content .card .card-body form .input-box input:focus{
+    border-color: #babffb;
+}
+.signup .container .content .card .card-body form .input-box input:focus-visible{
+    outline: none;
+    border-color: #babffb;
+}
+.signup .container .content .card .card-body form .input-box input::placeholder{
+    opacity: 0.6;
+}
+.signup .container .content .card .card-body form .btn-wrap{
+    text-align: center;
+}
+.signup .container .content .card .card-body form .btn-wrap .btn{
+    background-color: #727cf5;
+    border: 1px solid #727cf5;
+    color: white;
+    font-size: 1.0rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.15rem;
+    box-shadow: 0 2px 6px 0 rgb(114 124 245 / 50%);
+    margin-top: 15px;
+}
+.signup .container .content .card .card-body form .btn-wrap .btn:hover{
+    background-color: #6169d0;
+}
+.signup .container .content .card .card-body form .btn-wrap .btn:focus-visible{
+    outline: none;
+    background-color: #6169d0;
+}
+.signup .container .content .card-below{
+    text-align: center;
+    margin-top: 24px;
+}
+.signup .container .content .card-below p{
+    color: #98a6ad;
+    margin-bottom: 0;
+}
+.signup .container .content .card-below p a{
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 500;
+    color: #98a6ad;
+}
+.signup .container .content .card-below p a:focus-visible{
+    outline: none;
+}
